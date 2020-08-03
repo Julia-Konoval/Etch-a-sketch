@@ -4,13 +4,14 @@
 }
 .gridContainer {
   display: grid;
-  grid-template-columns: 30px;
-  grid-template-rows: 30px;
-  border: 1px solid rgba(139, 58, 139, 0.808);
+  grid-template-columns: repeat(16, 40px [col-start]);
+  grid-template-rows: repeat(16, 40px [row-start]);
   text-align: center;
-  width: 700px;
-  height: 700px;
 }
 .cell {
-  border: 1px solid black;
+  border: 1px solid rgba(139, 58, 139, 0.808);
 }
+/* .cell:hover,
+.cell.hover {
+  background: blue;
+} */
