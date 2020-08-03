@@ -17,6 +17,12 @@ const blackBtn = document.createElement("button");
 blackBtn.textContent = "Select black";
 buttonContainer.appendChild(blackBtn);
 
+const resetBtn = document.createElement("button");
+resetBtn.textContent = "Reset";
+buttonContainer.appendChild(resetBtn);
+
+document.body.appendChild(buttonContainer);
+
 function createGrid(rows, cols) {
   container.style.setProperty("--grid-rows", rows);
   container.style.setProperty("--grid-cols", cols);
@@ -35,6 +41,21 @@ function createGrid(rows, cols) {
         cell.style.background = bgColor;
         // cell.classList.add("hover");
       };
+    });
+
+    purpleBtn.addEventListener("click", function () {
+      cell.onmouseover = function () {
+        cell.style.background = "#cc99ff";
+      };
+    });
+
+    blackBtn.addEventListener("click", function () {
+      cell.onmouseover = function () {
+        cell.style.background = "black";
+      };
+    });
+    resetBtn.addEventListener("click", function () {
+      container.style.background = "white";
     });
   }
 }
