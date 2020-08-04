@@ -6,25 +6,28 @@ const buttonContainer = document.createElement("div");
 buttonContainer.className = "buttonContainer";
 
 const randomColorBtn = document.createElement("button");
-// randomColorBtn.className("btn");
+randomColorBtn.classList.add("btn");
 randomColorBtn.textContent = "Random color";
 buttonContainer.appendChild(randomColorBtn);
 
 const purpleBtn = document.createElement("button");
-// purpleBtn.className("btn");
+purpleBtn.classList.add("btn");
 purpleBtn.textContent = "Select purple";
 buttonContainer.appendChild(purpleBtn);
 
 const blackBtn = document.createElement("button");
-// blackBtn.className("btn");
+blackBtn.classList.add("btn");
 blackBtn.textContent = "Select black";
 buttonContainer.appendChild(blackBtn);
 
 const resetBtn = document.createElement("button");
-// resetBtn.className('btn');
+resetBtn.classList.add("btn");
 resetBtn.textContent = "Reset";
 buttonContainer.appendChild(resetBtn);
 
+function addBtnClass() {
+  let b;
+}
 document.body.appendChild(buttonContainer);
 
 function createGrid(rows, cols) {
@@ -62,7 +65,9 @@ function createGrid(rows, cols) {
     resetBtn.addEventListener("click", function () {
       let gridContainer = document.querySelector(".gridContainer");
       const gridItems = Array.from(document.querySelectorAll(".cell"));
-      gridItems.forEach((i) => (i.style["background-color"] = "white"));
+      gridItems.forEach(
+        (i) => (i.style["background-color"] = "rgb(250, 250, 250)")
+      );
       // while (gridContainer.firstChild) {
       //   gridContainer.removeChild(gridContainer.lastChild);
       // }
@@ -71,3 +76,7 @@ function createGrid(rows, cols) {
 }
 createGrid(16, 16);
 document.body.appendChild(container);
+
+const name = document.createElement("h1");
+name.textContent = "Etch-a-Sketch";
+document.body.appendChild(name);
