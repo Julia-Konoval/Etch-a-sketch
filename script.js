@@ -6,18 +6,22 @@ const buttonContainer = document.createElement("div");
 buttonContainer.className = "buttonContainer";
 
 const randomColorBtn = document.createElement("button");
+// randomColorBtn.className("btn");
 randomColorBtn.textContent = "Random color";
 buttonContainer.appendChild(randomColorBtn);
 
 const purpleBtn = document.createElement("button");
+// purpleBtn.className("btn");
 purpleBtn.textContent = "Select purple";
 buttonContainer.appendChild(purpleBtn);
 
 const blackBtn = document.createElement("button");
+// blackBtn.className("btn");
 blackBtn.textContent = "Select black";
 buttonContainer.appendChild(blackBtn);
 
 const resetBtn = document.createElement("button");
+// resetBtn.className('btn');
 resetBtn.textContent = "Reset";
 buttonContainer.appendChild(resetBtn);
 
@@ -54,8 +58,14 @@ function createGrid(rows, cols) {
         cell.style.background = "black";
       };
     });
+
     resetBtn.addEventListener("click", function () {
-      container.style.background = "white";
+      let gridContainer = document.querySelector(".gridContainer");
+      const gridItems = Array.from(document.querySelectorAll(".cell"));
+      gridItems.forEach((i) => (i.style["background-color"] = "white"));
+      // while (gridContainer.firstChild) {
+      //   gridContainer.removeChild(gridContainer.lastChild);
+      // }
     });
   }
 }
